@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Box with Different Colors</title>
+    <style>
+        .button-box {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            padding: 20px;
+        }
+
+        /* Styling individual buttons with different colors */
+        .button {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Different button colors */
+        .btn-red {
+            background-color: #ff4d4d;
+        }
+
+        .btn-blue {
+            background-color: #4d79ff;
+        }
+
+        .btn-green {
+            background-color: #4dff88;
+        }
+
+        .btn-orange {
+            background-color: #ffb84d;
+        }
+
+        .btn-purple {
+            background-color: #b84dff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="button-box">
+    <button class="button btn-red">Red Button</button>
+    <button class="button btn-blue">Blue Button</button>
+    <button class="button btn-green">Green Button</button>
+    <button class="button btn-orange">Orange Button</button>
+    <button class="button btn-purple">Purple Button</button>
+</div>
+
+<script>
+    const btn = document.querySelectorAll(".button"); // Selects all buttons with class 'button'
+    const body = document.querySelector("body");
+
+    btn.forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          const btntext = e.target.textContent;
+          if(btntext === "Red Button"){
+            body.style.backgroundColor="red";
+          }
+          else if(btntext === "Blue Button"){
+            body.style.backgroundColor="blue";
+          }
+          else if(btntext === "Green Button"){
+            body.style.backgroundColor="green";
+          }
+          else if(btntext === "Orange Button"){
+            body.style.backgroundColor="orange";
+          }
+          else if(btntext === "Purple Button"){
+            body.style.backgroundColor="purple";
+          }
+        });
+    });
+</script>
+</body>
+</html>
